@@ -1,0 +1,18 @@
+html,body{
+    margin:0;
+    padding:0
+}
+
+#input{
+    width:200
+}
+
+#messages{
+    position:fixed;
+    top:40px;
+    bottom:8px;
+    left:8px;
+    right:8px;
+    border:1px solid #eee;
+    padding:8px
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>chatRoom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <section style="float:left;width:100px;border:1px solid red;clear:both">左边</section>
+        <section style="float:right;width:100px;border:1px solid red;clear:both">右边</section>
+        <script>
+            var arr =['第一次setTimeout','第二次setTimeout','第三次setTimeout']
+            for(var i=0;i<arr.length;i++){
+                (function(i){
+                    setTimeout(function(){
+                        console.log(arr[i])
+                    },i*10)
+                    console.log('第'+(i+1)+'次进入匿名函数')
+                })(i)
+                console.log('第'+(i+1)+'次进入for循环')
+            }
+            console.log('我比setTimeout快')
+            console.log('因为我是主线程')
+        </script>
+    </body>
+</html>
