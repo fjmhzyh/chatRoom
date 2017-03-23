@@ -1,79 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>chatRoom</title>
+        <title>chatRoom--登录页</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="http://realtime.plhwin.com/socket.io/socket.io.js"></script>
-        <!--<link href="style.css" rel="stylesheet">
-        <script src="./client.js"></script>-->
-        <style>
-            html,body{margin:0;padding:0}
-            #input{width:200}
-            #messages{position:fixed;top:40px;bottom:8px;left:8px;right:8px;border:1px solid #eee;padding:8px}
-            .msg{padding:5px;background:#f5f5f5;border:1px solid #c5c5c5;min-width:50px;max-width:200px}
-            .right{float:right;clear:both;word-wrap: break-word}
-            .left{float:left;clear:both;word-wrap: break-word}
-        </style>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        your message:
-        <input type="text" id="input">
-        <div id="messages"></div>
-        <script>
-            var socket = io.connect("http://localhost:3000")
-            socket.on("serverMessage", function(data){
-                addMessage(data);
-            })
-            socket.on("myMessage", function(data){
-                addMessage(data,'right');
-            })
-            var msgBox = document.getElementById('messages');
-            var lastMsgBox = null ;
-            function addMessage(msg,cls) {
-                var newMsgBox = document.createElement('div');
-                newMsgBox.classList.add('msg')
-                if(cls){newMsgBox.classList.add(cls)}else{newMsgBox.classList.add('left')}
-                var newMsg = document.createTextNode(msg);
-                newMsgBox.appendChild(newMsg);
-                msgBox.appendChild(newMsgBox);
-              //  msgBox.insertBefore(newMsgBox,lastMsgBox);
-                lastMsgBox = newMsgBox
-            }
-
-           function sendCmd(cmd,args){
-                if(cmd === 'j'){
-                    socket.emit('join',args)
-                } else{
-                    alert('unknow cmd: '+cmd)
-                }
-            }
-
-            function sendMsg(msg){
-                var cmdMatch = msg.match(/^\/(\w*)(.*)/);
-                if(cmdMatch){
-                    sendCmd(cmdMatch[1],cmdMatch[2].trim())
-                }else{
-                    socket.emit('clientMessage',msg)
-                }
-            }
-
-            var input = document.getElementById('input');
-            input.onkeydown = function(event){
-                if(event.keyCode == 13){
-                    sendMsg(input.value)
-                   // socket.emit('clientMessage',input.value);
-                    input.value = '';
-                    return false
-                } else {
-                    return true
-                }
-            }
-
-            socket.on('connectSuccess',function(){
-                var name = prompt('请输入用户名');
-                socket.emit('login',name)
-            })
-        </script>
+        <div class="container-fluid">
+            <div class="row" style="margin-top:200px">
+                 <div class="col-md-offset-4 col-md-4">
+                     <h2 class="text-primary chatTitle">ChatRoom</h2>
+                     <div class="form-horizontal chatForm">
+                        <div class="form-group">
+                            <label for="userName">用户名</label>
+                            <input type="text" class="form-control" id="userName" placeholder="用户名">
+                        </div>
+                        <div class="form-group">
+                            <a type="button" class="btn btn-primary btn-block" id="login">点击进入</a>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+        <script src="./js/login.js"></script>
     </body>
 </html>

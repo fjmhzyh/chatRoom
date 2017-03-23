@@ -1,6 +1,10 @@
-html,body{
+html,body,ul,li{
     margin:0;
     padding:0
+}
+
+input,button,select,textarea{
+    outline:none
 }
 
 #input{
@@ -15,4 +19,265 @@ html,body{
     right:8px;
     border:1px solid #eee;
     padding:8px
+}
+
+
+.chatTitle{
+    text-align:center;
+    font-weight:bold
+}
+
+.chatForm{
+    box-shadow:1px 1px 10px 2px #ccc;
+    padding:30px;
+    border-radius:10px
+}
+
+
+/*聊天框css*/
+.chatBox{
+    z-index: 19891017;
+    width: 600px;
+    top: 258.5px;
+    left: 246.5px;
+    min-width: 500px;
+    min-height: 420px;
+    /*background-image: url(http://res.layui.com/layui/build/css/modules/layim/skin/3.jpg);*/
+    height: 520px;
+    overflow: visible;
+    border: 1px solid #D9D9D9;
+    border-color: rgba(0,0,0,.05);
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+
+/*title部分*/
+.chatBox-title{
+    height: 80px;
+    border-bottom: none;
+    background-color: rgba(245,245,245,.7);
+    padding: 0 15px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    cursor: move;
+}
+
+.chatBox-title .chatBox-info{
+    display: inline-block;
+    width: 45%;
+}
+
+.chatBox-title .chatBox-switch{
+    float:right;
+    font-size:24px;
+    font-weight:bold
+}
+.chatBox-switch i{
+    cursor: pointer
+}
+
+/*conten部分*/
+.chatBox-content{
+
+}
+
+.chatBox-content-main{
+    height: 262px;
+    padding: 15px 15px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*其他用户信息样式*/
+.chatBox-content-main li{
+    position: relative;
+    font-size: 0;
+    margin-bottom: 10px;
+    padding-left: 60px;
+    min-height: 68px;
+}
+
+.chatBox-content-main .chatRoom-user{
+    position: absolute;
+    left: 3px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.chatRoom-user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.chatRoom-user-text {
+    position: relative;
+    line-height: 22px;
+    margin-top: 25px;
+    padding: 8px 15px;
+    background-color: #e2e2e2;
+    border-radius: 3px;
+    color: #333;
+    word-break: break-all;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.chatRoom-user-text:after{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 13px;
+    width: 0;
+    height: 0;
+    border-style: solid dashed dashed;
+    border-color: #e2e2e2 transparent transparent;
+    overflow: hidden;
+    border-width: 10px;
+}
+
+cite{
+    position: absolute;
+    left: 60px;
+    top: -2px;
+    width: 500px;
+    line-height: 24px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #999;
+    text-align: left;
+    font-style: normal;
+}
+
+cite i{
+    padding-left: 15px;
+    font-style: normal;
+}
+
+/*自己发言样式*/
+.chatRoom-me{
+    text-align: right;
+    padding-left: 0;
+    padding-right: 60px;
+}
+
+.chatRoom-me .chatRoom-user{
+    left: auto;
+    right: 3px;
+}
+
+.chatRoom-me cite{
+    left: auto;
+    right: 60px;
+    text-align: right;
+}
+
+.chatRoom-me cite i{
+    margin-right: 15px;
+}
+
+.chatRoom-me .chatRoom-user-text{
+    margin-left: 0;
+    text-align: left;
+    background-color: #5FB878;
+    color: #fff;
+}
+
+.chatRoom-me .chatRoom-user-text:after{
+    left: auto;
+    right: -10px;
+    border-top-color: #5FB878;
+}
+
+/*通知样式*/
+li[class="chatRoom-notice"]{
+    text-align:center;
+    padding-left:0;
+    color:#c9c9c9;
+    font-size:14px
+}
+
+.chatBox-content-footer{
+    border-top: 1px solid #F1F1F1;
+}
+
+.chatBox-content-footer .chatBox-toolbar{
+    position: relative;
+    padding: 0 8px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 0;
+}
+
+.chatBox-content-footer .chatBox-textarea{
+    margin-left: 10px;
+}
+
+.chatBox-textarea textarea{
+    display: block;
+    width: 100%;
+    padding: 5px 0 0;
+    height: 68px;
+    line-height: 20px;
+    border: none;
+    overflow: auto;
+    resize: none;
+    background: 0 0;
+}
+
+.chatBox-content-footer .chatBox-bottom{
+    position: relative;
+    height: 46px;
+}
+
+.chatBox-icon{
+    position: relative;
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.chatBox-icon:first-child{
+    font-size: 20px;
+}
+
+.chatBox-btn{
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.chatBox-btn-close{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 32px;
+    margin-left: 5px;
+    padding: 0 20px;
+    background-color: #5FB878;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.chatBox-btn-send{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 32px;
+    margin-left: 5px;
+    padding: 0 20px;
+    background-color: #5FB878;
+    color: #fff;
+    border-radius: 3px 0 0 3px;
 }
