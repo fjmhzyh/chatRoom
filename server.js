@@ -20,11 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
 
-app.get('/chat.html/:userName',(req,res) => {
-    console.log(req.params.userName)
-   // res.render('index')
-   res.end(req.params.userName)
-})
+
 
 // 设置监听
 io.on('connection', function(client){
