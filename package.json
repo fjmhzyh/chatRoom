@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fjmhzyh/chatRoom#readme",
   "dependencies": {
     "express": "4.15.2",
+    "moment": "2.18.1",
     "socketio": "1.0.0"
   }
 }
