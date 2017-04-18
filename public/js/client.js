@@ -70,6 +70,9 @@ var chat = {
     genUid:function(){
         return new Date().getTime()+""+Math.floor(Math.random()*899+100);
     },
+    autoCenter:function(){
+        
+    }
 }
 
 //初始化
