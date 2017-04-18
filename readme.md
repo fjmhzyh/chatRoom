@@ -16,4 +16,5 @@ $ node server.js        // 启动项目
  ![image](https://github.com/fjmhzyh/react-china/blob/master/code.jpg)
 
 ### 项目预览
-![image](https://github.com/fjmhzyh/react-china/blob/master/react.gif)
+![image](https://github.com/fjmhzyh/chatRoom/blob/master/chat0.png)
+![image](https://github.com/fjmhzyh/chatRoom/blob/master/chat1.png)
