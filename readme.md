@@ -28,7 +28,7 @@ HTTP协议（超文本传输协议）是互联网上应用最为广泛的一种�
 
 ### 项目搭建
 ```bash
-git clone git@github.com:fjmhzyh/react-china.git      // 将项目下载到本地
+git clone git@github.com:fjmhzyh/chatRoom.git      // 将项目下载到本地
 $ node server.js        // 启动项目
 ```
 * 打开项目主页  http://localhost:3000    
